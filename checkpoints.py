@@ -33,7 +33,13 @@ class Solution:
             # Sort checkpoints from least to greatest
             #type num: list of int
             #return type: int
-            
+            checkpoints_copy =  checkpoints
+            checkpoints = []
+
+            for i in range(len(checkpoints_copy)):
+                 checkpoints.append(min(checkpoints_copy))
+                 checkpoints_copy.remove(min(checkpoints_copy))
+
             largest_val = 0
             for i in range(len(checkpoints)):
                  if checkpoints[i] != (checkpoints[-1]) and abs(checkpoints[i]-checkpoints[i+1])>largest_val:
